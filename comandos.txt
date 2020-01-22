@@ -1,5 +1,12 @@
 Comandos Laravel 
 
-- laravel new <nome> -> cria novo projeto 
-- php artisan serve -> ativa o servidor
+- laravel new <nome> -> cria novo projeto;
+- php artisan serve -> ativa o servidor;
 - php artisan migrate:install -> criação da tabela migrations, que irá registrar quais migrações foram feitas ou executadas no banco;
+- php artisan make:migration <nome> -> cria um arquivo de migração;
+- php artisan migrate -> roda as migrações e salva os registros na tabela migrations;
+- php artisan migrate:rollback -> reverte a última migração feita (removendo-a da tabela migrations);
+- php artisan migrate:fresh -> apaga todas as tabelas existentes e faz todas as migrações novamente (*tomar cuidado caso existam tabelas que não foram criadas com o migration, pois esse comando irá apagar TODAS as tabelas do banco);
+- php artisan migrate:refresh -> faz um rollback de todas as migrações e executa todas novamente;
+- php artisan make:seeder <nome> -> cria um seeder;
+- php artisan db:seed -> executa o seeder;

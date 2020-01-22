@@ -1,0 +1,5 @@
+o que são migrations
+
+- migrations são históricos das mudanças que ocorrem na base de dados, como por exemplo, a criação de uma tabela.
+- migration é a possiblidade de versionar/documentar o crescimento estrutural da sua base de dados (adição de tabelas, adiçao de colunas, edição de colunas, etc);
+- traz uma automação por meio da execução de comandos;

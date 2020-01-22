@@ -1,4 +1,5 @@
 Comandos Laravel 
 
-- laravel new <nome>: cria novo projeto 
-- php artisan serve: ativa o servidor
+- laravel new <nome> -> cria novo projeto 
+- php artisan serve -> ativa o servidor
+- php artisan migrate:install -> criação da tabela migrations, que irá registrar quais migrações foram feitas ou executadas no banco;

@@ -15,6 +15,7 @@ return [
     |
     */
 
+    //pacote env vem default no laravel, e serve para a criação de variáveis de ambientes, e essas variáveis estão no arquivo .env
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*

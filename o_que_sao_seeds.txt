@@ -1,0 +1,3 @@
+o que são seeds
+
+- permitem a criação de dados para as tabelas, para realizar testes da aplicação;

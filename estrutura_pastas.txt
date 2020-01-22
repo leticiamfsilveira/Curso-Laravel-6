@@ -1,0 +1,12 @@
+Estrutura das pastas
+
+- app: está a aplicação;
+- bootstrap: inicialização do framework;
+- config: configurações do framework;
+- database: contém as migrações, seeds e factories;
+- public: web;
+- resources: views de interação do usuário;
+- routes: definição de rotas da aplicação;
+- storage: arquivos (cache, log);
+- tests: testes unitários;
+- vendor: pasta adicionada pelo composer;

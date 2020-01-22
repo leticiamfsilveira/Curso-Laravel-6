@@ -1,0 +1,4 @@
+Comandos Laravel 
+
+- laravel new <nome>: cria novo projeto 
+- php artisan serve: ativa o servidor

@@ -1,0 +1,5 @@
+O que é o Eloquent?
+
+- ORM -> traduz uma base relacional (banco de dados) para o orientado a objetos (model);
+- é um ORM padrão do Laravel, e os models extendem dele;
+- o Laravel possui uma convenção em relação à nomeação dos models, ele procura automaticamente o nome do model no plural lá no banco de dados (ex: Store [model] -> stores [bdd]);

@@ -12,3 +12,5 @@ Comandos Laravel
 - php artisan db:seed -> executa o seeder (para o seeder criado ser executado, ele precisa ser chamado na classe DatabaseSeeder);
 - php artisan migrate:refresh --seed -> faz um rollback de todas as migrações e executa todas novamente, e depois roda as seeds;
 - php artisan migrate:reset -> faz o rollback de TODAS as migrações;]
+- php artisan make:model <nome> -> cria um model;
+- 

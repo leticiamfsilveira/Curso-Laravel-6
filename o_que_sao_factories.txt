@@ -1,0 +1,5 @@
+O que são factories?
+
+- Faker é um pacote que o Laravel usa para a criação de dados fakes;
+- Definem modelos para a criação de uma grande massa de dados, pode-se criar 100 usuários de uma só vez, por exemplo;
+- A Factory apenas define os modelos, quem os utiliza são os seeds;

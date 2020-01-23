@@ -9,4 +9,5 @@ Comandos Laravel
 - php artisan migrate:fresh -> apaga todas as tabelas existentes e faz todas as migrações novamente (*tomar cuidado caso existam tabelas que não foram criadas com o migration, pois esse comando irá apagar TODAS as tabelas do banco);
 - php artisan migrate:refresh -> faz um rollback de todas as migrações e executa todas novamente;
 - php artisan make:seeder <nome> -> cria um seeder;
-- php artisan db:seed -> executa o seeder;
+- php artisan db:seed -> executa o seeder (para o seeder criado ser executado, ele precisa ser chamado na classe DatabaseSeeder);
+- php artisan migrate:refresh --seed -> faz um rollback de todas as migrações e executa todas novamente, e depois roda as seeds;

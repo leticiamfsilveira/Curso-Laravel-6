@@ -16,7 +16,8 @@ Route::get('/', function () {
     return view('welcome', compact('helloWorld'));
 });
 
-Route::get('/model', function() {
+Route::get('/model',
+    function () {
 //  $products = \App\Product::all(); //select * from products
 
 //  ------------ active record --------------
@@ -28,8 +29,17 @@ Route::get('/model', function() {
 
 //  $user->save(); //salva as alterações ou inserções
 //  return
-    //\App\User::all(); // retorna todos os usuários em uma Collection
-    //\App\User::find(3); //retorna o usuário com base no id
-    //\App\User::where('name', 'Clemens Greenfelder')->get(); // select * from users where name = 'Clemens Greenfelder'
-    return ;
+        //\App\User::all(); // retorna todos os usuários em uma Collection
+        //\App\User::find(3); //retorna o usuário com base no id
+        //\App\User::where('name', 'Clemens Greenfelder')->get(); // select * from users where name = 'Clemens Greenfelder'
+        //\App\User::paginate(10) //paginar dados com  laravel
+
+//  ------------ mass assigment (atribuição em massa) -------------
+
+        $user = \App\User::create({
+            'name' => 'Letícia Fernandes',
+        'email' => 'lemayara16@gmail.com',
+
+    });
+    return \App\User::all();
 });

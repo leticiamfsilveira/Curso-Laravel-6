@@ -36,10 +36,19 @@ Route::get('/model',
 
 //  ------------ mass assigment (atribuição em massa) -------------
 
-        $user = \App\User::create({
-            'name' => 'Letícia Fernandes',
-        'email' => 'lemayara16@gmail.com',
+//  $user = \App\User::create([
+//      'name' => 'Letícia Fernandes',
+//      'email' => 'lemayara16@gmail.com',
+//      'password' => bcrypt('123456789')
+//  ]);
 
-    });
+//  ------------ mass update (atualização em massa) -------------
+
+
+//  $user = \App\User::find(141);
+//  $user->update([
+//      'name' => 'Atualizando com Mass Update'
+//  ]); //true ou false
+
     return \App\User::all();
 });

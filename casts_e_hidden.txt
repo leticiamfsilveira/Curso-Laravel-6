@@ -1,0 +1,5 @@
+Casts & Hidden
+
+- casts: atributos que devem ser convertidos para tipos nativos.
+
+- hidden: atributos que devem ser ocultos de arrays

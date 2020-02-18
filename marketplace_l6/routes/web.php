@@ -35,7 +35,6 @@ Route::get('/model',
         //\App\User::paginate(10) //paginar dados com  laravel
 
 //  ------------ mass assigment (atribuição em massa) -------------
-
 //  $user = \App\User::create([
 //      'name' => 'Letícia Fernandes',
 //      'email' => 'lemayara16@gmail.com',
@@ -43,12 +42,68 @@ Route::get('/model',
 //  ]);
 
 //  ------------ mass update (atualização em massa) -------------
-
-
 //  $user = \App\User::find(141);
 //  $user->update([
 //      'name' => 'Atualizando com Mass Update'
 //  ]); //true ou false
+
+//  ----------------------------  Pegar a loja de um usuário ---------------------
+    // $user = \App\User::find(4);
+    // return $user->store; // O objecto único (Store) se for Collection de Dados (Objetos)
+
+//  ----------------------------- Pegar os produtos de uma loja -------------------
+    // $loja = \App\Store::find(1);
+    // return $loja->products | $loja->products()->where('id', 1)->get();
+
+//  ----------------------------- Pegar as lojas de uma categoria ------------------
+    // $categoria = \App\Category::find(1);
+    // return $categoria->products;
+
+// ------------------------------ Criar uma loja para um usuário --------------------
+//    $user = \App\User::find(10);
+//    $store = $user->store()->create([
+//        'name' => 'loja teste',
+//        'description' => 'loja teste de produtos de informática',
+//        'mobile_phone' => 'xx-xxxxx-xxxx',
+//        'phone' => 'xx-xxxxx-xxxx',
+//        'slug' => 'loja-teste',
+//    ]);
+//
+//    dd($store);
+
+// ------------------------------ Criar um produto para uma loja --------------------
+//    $store = \App\Store::find(41);
+//    $product = $store->products()->create([
+//        'name' => 'notebook dell',
+//        'description' => 'core i5 10gb',
+//        'body' => 'qualquer coisa',
+//        'price' => 2999.90,
+//        'slug' => 'notebook-dell',
+//    ]);
+//
+//    dd($product);
+
+// ------------------------------ Criar uma categoria -------------------------------
+//    \App\Category::create([
+//        'name' => 'games',
+//        'description' => null,
+//        'slug' => 'games',
+//    ]);
+//
+//    \App\Category::create([
+//        'name' => 'notebooks',
+//        'description' => null,
+//        'slug' => 'notebooks',
+//    ]);
+//
+//    return \App\Category::all();
+
+// ------------- Adicionar um produto para uma categoria ou vice-versa --------------
+    // $product = \App\Product::find(41);
+
+    // dd($product->categories()->sync([2])); // remove e adiciona automaticamente
+    // detach ->retorna a quantidade de itens removidos
+    // attach->adiciona
 
     return \App\User::all();
 });

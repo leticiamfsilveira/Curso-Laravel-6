@@ -16,8 +16,7 @@ Route::get('/', function () {
     return view('welcome', compact('helloWorld'));
 });
 
-Route::get('/model',
-    function () {
+Route::get('/model', function () {
 //  $products = \App\Product::all(); //select * from products
 
 //  ------------ active record --------------
@@ -107,3 +106,5 @@ Route::get('/model',
 
     return \App\User::all();
 });
+
+Route::get('/admin/stores', 'Admin\\StoreController@index');

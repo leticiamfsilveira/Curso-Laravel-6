@@ -107,8 +107,14 @@ Route::get('/model', function () {
     return \App\User::all();
 });
 
-Route::get('/admin/stores', 'Admin\\StoreController@index');
+Route::prefix('admin')->namespace('Admin')->group(function(){
 
-Route::get('/admin/stores/create', 'Admin\\StoreController@create');
+    Route::prefix('stores')->group(function(){
 
-Route::post('/admin/stores/store', 'Admin\\StoreController@store');
+        Route::get('', 'StoreController@index');
+        Route::get('/create', 'StoreController@create');
+        Route::post('/store', 'StoreController@store');
+
+    });
+
+});

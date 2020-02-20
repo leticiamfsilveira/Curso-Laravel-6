@@ -1,0 +1,4 @@
+Middlewares: Dentro de aplicações web, é um código ou programa que é executado entre a requisição(request) e a nossa
+aplcação(lógica executada pelo acesso à uma determinada rota)
+
+Request -> Middleware -> Aplicação (Acesso qualquer rota) <- Marketplace

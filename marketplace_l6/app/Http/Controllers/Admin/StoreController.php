@@ -57,4 +57,9 @@ class StoreController extends Controller
         flash('Loja Removida com Sucesso!')->success();
         return redirect()->route('admin.stores.index');
     }
+
+    public function show($id)
+    {
+
+    }
 }

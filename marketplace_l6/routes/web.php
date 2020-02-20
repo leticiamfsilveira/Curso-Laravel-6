@@ -107,7 +107,9 @@ Route::get('/model', function () {
     return \App\User::all();
 });
 
-Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
+Route::group(['middleware' => ['auth']], function(){
+
+    Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
 
 //    Route::prefix('stores')->name('stores.')->group(function(){
 //
@@ -119,7 +121,12 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
 //        Route::get('/destroy/{store}', 'StoreController@destroy')->name('destroy');
 //
 //    });
-    Route::resource('stores', 'StoreController');
-    Route::resource('products', 'ProductController');
+        Route::resource('stores', 'StoreController');
+        Route::resource('products', 'ProductController');
 
+    });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');//->middleware('auth');

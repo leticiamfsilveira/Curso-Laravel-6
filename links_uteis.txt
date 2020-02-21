@@ -1,0 +1,2 @@
+Validações
+- https://laravel.com/docs/6.x/validation#available-validation-rules

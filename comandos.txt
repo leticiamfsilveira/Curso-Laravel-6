@@ -13,4 +13,6 @@ Comandos Laravel
 - php artisan migrate:refresh --seed -> faz um rollback de todas as migrações e executa todas novamente, e depois roda as seeds;
 - php artisan migrate:reset -> faz o rollback de TODAS as migrações;]
 - php artisan make:model <nome> -> cria um model;
-- 
+- php artisan make:request <nome> -> cria uma request que deriva de FormRequest
+- php artisan make:middleware <nome> -> cria um middleware
+- php artisan route:list -> mostra a lista de rotas da aplicação

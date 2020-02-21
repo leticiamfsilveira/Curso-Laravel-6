@@ -14,7 +14,7 @@
 Route::get('/', function () {
     $helloWorld =  'Hello World';
     return view('welcome', compact('helloWorld'));
-});
+})->name('home');
 
 Route::get('/model', function () {
 //  $products = \App\Product::all(); //select * from products
@@ -129,4 +129,4 @@ Route::group(['middleware' => ['auth']], function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');//->middleware('auth');
+//Route::get('/home', 'HomeController@index')->name('home');//->middleware('auth');

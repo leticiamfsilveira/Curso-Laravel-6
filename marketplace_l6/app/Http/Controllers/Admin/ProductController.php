@@ -51,7 +51,7 @@ class ProductController extends Controller
 
         $store = auth()->user()->store;
         $product = $store->products()->create($data);
-        
+
         $product->categories()->sync($data['categories']);
 
         flash('Produto Criado com Sucesso!')->success();
@@ -96,6 +96,7 @@ class ProductController extends Controller
 
         $product = $this->product->findOrFail($product);
         $product->update($data);
+        $product->categories()->sync($data['categories']);
 
         flash('Produto Atualizado com Sucesso!')->success();
         return redirect()->route('admin.products.index');

@@ -28,6 +28,9 @@
         </div>
 
         <div class="form-group">
+            <p>
+                <img src="{{asset('storage/'.$store->logo)}}" alt="">
+            </p>
             <label>Logo</label>
             <input type="file" class="form-control" name="logo">
         </div>

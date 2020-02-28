@@ -131,17 +131,4 @@ class ProductController extends Controller
         flash('Produto Removido com Sucesso!')->success();
         return redirect()->route('admin.products.index');
     }
-
-    private function imageUpload(request $request, $imageColumn)
-    {
-        $images = $request->file('photos');
-
-        $uploadedImages = [];
-
-        foreach($images as $image){
-            $uploadedImages[] = [$imageColumn => $image->store('products', 'public')];
-        }
-
-        return $uploadedImages;
-    }
 }

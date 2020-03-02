@@ -13,6 +13,34 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/product/{slug}', 'HomeController@single')->name('product.single');
+
+Route::group(['middleware' => ['auth']], function(){
+
+    Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
+
+//    Route::prefix('stores')->name('stores.')->group(function(){
+//
+//        Route::get('', 'StoreController@index')->name('index');
+//        Route::get('/create', 'StoreController@create')->name('create');
+//        Route::post('/store', 'StoreController@store')->name('store');
+//        Route::get('/{store}/edit', 'StoreController@edit')->name('edit');
+//        Route::post('/update/{store}', 'StoreController@update')->name('update');
+//        Route::get('/destroy/{store}', 'StoreController@destroy')->name('destroy');
+//
+//    });
+        Route::resource('stores', 'StoreController');
+        Route::resource('products', 'ProductController');
+        Route::resource('categories', 'CategoryController');
+
+        Route::post('photos/remove', 'ProductPhotoController@removePhoto')->name('photo.remove');
+
+    });
+});
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');//->middleware('auth');
 Route::get('/model', function () {
 //  $products = \App\Product::all(); //select * from products
 
@@ -25,10 +53,10 @@ Route::get('/model', function () {
 
 //  $user->save(); //salva as alterações ou inserções
 //  return
-        //\App\User::all(); // retorna todos os usuários em uma Collection
-        //\App\User::find(3); //retorna o usuário com base no id
-        //\App\User::where('name', 'Clemens Greenfelder')->get(); // select * from users where name = 'Clemens Greenfelder'
-        //\App\User::paginate(10) //paginar dados com  laravel
+    //\App\User::all(); // retorna todos os usuários em uma Collection
+    //\App\User::find(3); //retorna o usuário com base no id
+    //\App\User::where('name', 'Clemens Greenfelder')->get(); // select * from users where name = 'Clemens Greenfelder'
+    //\App\User::paginate(10) //paginar dados com  laravel
 
 //  ------------ mass assigment (atribuição em massa) -------------
 //  $user = \App\User::create([
@@ -103,30 +131,3 @@ Route::get('/model', function () {
 
     return \App\User::all();
 });
-
-Route::group(['middleware' => ['auth']], function(){
-
-    Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
-
-//    Route::prefix('stores')->name('stores.')->group(function(){
-//
-//        Route::get('', 'StoreController@index')->name('index');
-//        Route::get('/create', 'StoreController@create')->name('create');
-//        Route::post('/store', 'StoreController@store')->name('store');
-//        Route::get('/{store}/edit', 'StoreController@edit')->name('edit');
-//        Route::post('/update/{store}', 'StoreController@update')->name('update');
-//        Route::get('/destroy/{store}', 'StoreController@destroy')->name('destroy');
-//
-//    });
-        Route::resource('stores', 'StoreController');
-        Route::resource('products', 'ProductController');
-        Route::resource('categories', 'CategoryController');
-
-        Route::post('photos/remove', 'ProductPhotoController@removePhoto')->name('photo.remove');
-
-    });
-});
-
-Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');//->middleware('auth');

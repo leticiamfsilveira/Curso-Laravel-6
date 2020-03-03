@@ -7,8 +7,9 @@
             <hr>
         </div>
         <div class="col-12">
-            <table class="table table-striped">
-                <thead>
+            @if($cart)
+                <table class="table table-striped">
+                    <thead>
                     <tr>
                         <th>Produto</th>
                         <th>Preço</th>
@@ -16,8 +17,8 @@
                         <th>Subtotal</th>
                         <th>Ação</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     @php
                         $total = 0;
                     @endphp
@@ -32,7 +33,7 @@
                             @endphp
                             <td>R$ {{number_format($subtotal, 2, ',', '.')}}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-danger">REMOVER</a>
+                                <a href="{{route('cart.remove', ['slug' => $c['slug']])}}" class="btn btn-sm btn-danger">REMOVER</a>
                             </td>
                         </tr>
                     @endforeach
@@ -40,8 +41,11 @@
                         <td colspan="3">Total: </td>
                         <td colspan="2">R$  {{number_format($total, 2, ',', '.')}}</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            @else
+                <div class="alert alert-warning">Carrinho vazio.</div>
+            @endif
         </div>
     </div>
 @endsection

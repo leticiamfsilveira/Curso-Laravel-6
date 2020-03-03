@@ -30,7 +30,7 @@ class CartController extends Controller
                 session()->put('cart', $products);
 
             } else {
-                
+
                 session()->push('cart', $product);
             }
 

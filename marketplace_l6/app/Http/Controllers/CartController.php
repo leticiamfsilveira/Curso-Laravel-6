@@ -9,8 +9,11 @@ class CartController extends Controller
 
     public function index()
     {
-        dd(session()->get('cart'));
+        $cart = session()->has('cart') ? session()->get('cart') : [];
+
+        return view('cart', compact('cart'));
     }
+
     public function add(Request $request)
     {
         $product = $request->get('product');

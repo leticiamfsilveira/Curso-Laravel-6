@@ -14,6 +14,8 @@ class CheckoutController extends Controller
 
         $this->makePagSeguroSession();
 
+        var_dump(session()->get('pagseguro_session_code'));
+
         return view('checkout');
     }
 

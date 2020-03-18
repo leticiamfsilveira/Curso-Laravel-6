@@ -94,7 +94,6 @@
                 expirationYear: document.querySelector('input[name=card_year]').value,
                 success: function (res) {
                     console.log(res);
-
                     processPayment(res.card.token);
                 }
             });
@@ -103,14 +102,15 @@
         function processPayment() {
 
             let data = {
-                token: token,
+                card_token: token,
                 hash: PagSeguroDirectPayment.getSenderHash(),
-                installment: document.querySelector('select_installments').value
+                installment: document.querySelector('.select_installments').value,
+                _token: '{{csrf_token()}}',
             };
 
             $.ajax({
                 type: 'post',
-                url: '',
+                url: '{{route('checkout.process')}}',
                 data: data,
                 dataType: 'json',
                 success: function (res) {

@@ -19,7 +19,7 @@ class CheckoutController extends Controller
         return view('checkout');
     }
 
-    public function process(Request $request)
+    public function proccess(Request $request)
     {
         dd($request->all());
     }

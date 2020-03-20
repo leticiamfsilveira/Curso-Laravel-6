@@ -8,21 +8,15 @@ class CheckoutController extends Controller
 {
     public function index()
     {
-        //session()->forget('pagseguro_session_code');
-
         if(!auth()->check()) {
             return redirect()->route('login');
         }
 
         $this->makePagSeguroSession();
 
-        $cartItems = array_map(function($line){
-            return $line['amount'] * $line['price'];
-        }, session()->get('cart'));
+        var_dump(session()->get('pagseguro_session_code'));
 
-        $cartItems = array_sum($cartItems);
-
-        return view('checkout', compact('cartItems'));
+        return view('checkout');
     }
 
     public function proccess(Request $request)
@@ -93,7 +87,6 @@ class CheckoutController extends Controller
         $creditCard->setToken($dataPost['card_token']);
 
         list($quantity, $installmentAmount) = explode('|', $dataPost['installment']);
-        $installmentAmount = number_format($installmentAmount, 2, '.', '');
 
         $creditCard->setInstallment()->withParameters($quantity, $installmentAmount);
 

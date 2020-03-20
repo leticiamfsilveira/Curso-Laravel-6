@@ -107,7 +107,6 @@
         });
 
         function processPayment(token) {
-
             let data = {
                 card_token: token,
                 hash: PagSeguroDirectPayment.getSenderHash(),
@@ -123,6 +122,10 @@
                 dataType: 'json',
                 success: function (res) {
                     alert(res.data.message);
+                },
+                error: function(err, msg){
+                    console.log(err);
+                    console.log(msg);
                 }
             });
         }

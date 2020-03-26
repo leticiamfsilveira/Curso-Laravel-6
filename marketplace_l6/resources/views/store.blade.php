@@ -2,9 +2,24 @@
 
 @section('content')
     <div class="row front">
-        <div class="col-12">
+        <div class="col-4">
+            @if($store->logo)
+                <img src="{{asset('storage/'.$store->logo)}}" alt="Logo da Loja {{$store->name}}" class="img-fluid">
+            @else
+                <img src="https://via.placeholder.com/600X300.png?text=logo" alt="Loja sem Logo" class="img-fluid">
+            @endif
+        </div>
+        <div class="col-8">
             <h2>{{$store->name}}</h2>
+            <p>{{$store->description}}</p>
+            <p>
+                <strong>Contatos:</strong>
+                <span>{{$store->phone}}</span> | <span>{{$store->mobile_phone}}</span>
+            </p>
+        </div>
+        <div class="col-12">
             <hr>
+            <h3 style="margin-bottom: 30px;">Produtos desta loja</h3>
         </div>
         @forelse($store->products as $key => $product)
             <div class="col-md-4">

@@ -33,6 +33,6 @@ class Store extends Model
 
     public function orders()
     {
-        return $this->belongsToMany(UserOrder::class, 'order_store');
+        return $this->belongsToMany(UserOrder::class, 'order_store', null, 'order_id');
     }
 }

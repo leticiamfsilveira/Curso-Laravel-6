@@ -23,7 +23,7 @@ class CartController extends Controller
         if(!$product->count() || $productData['amount'] == 0)
             return redirect()->route('home');
 
-        $product = array_merge($productData, $product->first(['name', 'price'])->toArray());
+        $product = array_merge($productData, $product->first(['name', 'price', 'store_id'])->toArray());
 
         //verificar se existe sessão para os produtos
         if(session()->has('cart')) {
